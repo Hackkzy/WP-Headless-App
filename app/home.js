@@ -19,7 +19,10 @@ const Home = () => {
 						<ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
 					),
 					headerRight: () => (
-						<ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
+						<ScreenHeaderBtn
+							iconUrl={{ uri: "https://i.pravatar.cc/300" }}
+							dimension="100%"
+						/>
 					),
 					headerTitle: "",
 				}}

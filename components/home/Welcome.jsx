@@ -1,14 +1,13 @@
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import { icons, COLORS, FONT, SIZES } from "../../constants";
 import { StyleSheet } from "react-native";
 
-import {} from "../../constants";
+import { icons, COLORS, FONT, SIZES } from "../../constants";
 
 const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
 	return (
 		<View>
 			<View style={styles.container}>
-				<Text style={styles.userName}>Hello Jay</Text>
+				<Text style={styles.userName}>Hello &lt;User/&gt;</Text>
 				<Text style={styles.welcomeMessage}>Welcome</Text>
 			</View>
 

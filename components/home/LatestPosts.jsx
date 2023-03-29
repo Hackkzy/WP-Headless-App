@@ -16,14 +16,14 @@ import useFetch from "../../hooks/useFetch";
 const LatestPosts = () => {
 	const router = useRouter();
 	const { data, isLoading, error } = useFetch("posts", {
-		_fields: "id,title,author,featured_media",
+		_fields: "id,title,blp_author_name,blp_featured_image_url",
 		per_page: 5,
 	});
 
 	const [selectedPost, setSelectedPost] = useState(0);
 
 	const handleCardPress = (item) => {
-		router.push(`/post/${item.id}`);
+		router.push(`/blog-page/${item.id}`);
 		setSelectedPost(item.id);
 	};
 
