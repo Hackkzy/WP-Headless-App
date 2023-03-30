@@ -17,12 +17,15 @@ const LatestPostCard = ({ item, selectedPost, handleCardPress }) => {
 							? item.blp_featured_image_url
 							: "https://images.unsplash.com/photo-1499750310107-5fef28a66643",
 					}}
-					resizeMode="contain"
+					resizeMode='contain'
 					style={styles.logoImage}
 				/>
 			</View>
 			<View style={styles.infoContainer}>
-				<Text style={styles.postTitle(selectedPost, item)} numberOfLines={1}>
+				<Text
+					style={styles.postTitle(selectedPost, item)}
+					numberOfLines={1}
+				>
 					{decodeHTMLEntities(item.title.rendered)}
 				</Text>
 				<View style={styles.infoWrapper}>
