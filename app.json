@@ -5,6 +5,17 @@
       "bundler": "metro"
     },
     "name": "BiliPlugins",
-    "slug": "BiliPlugins"
+    "slug": "BiliPlugins",
+    "plugins": [
+      "expo-build-properties"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2edc31cd-e470-4618-b80a-123c9f97c747"
+      }
+    },
+    "android": {
+      "package": "com.hackkzy.BiliPlugins"
+    }
   }
 }

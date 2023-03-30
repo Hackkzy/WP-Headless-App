@@ -6,7 +6,7 @@ import { useFonts } from "expo-font";
 
 export const unstable_settings = {
 	// Ensure any route can link back to `/`
-	initialRouteName: "home",
+	initialRouteName: "index",
 };
 
 const Layout = () => {
@@ -21,8 +21,17 @@ const Layout = () => {
 	}
 
 	return (
-		<Stack initialRouteName="home">
-			<Stack.Screen name="home" />
+		<Stack
+			screenOptions={{
+				headerShown: false,
+			}}
+		>
+			<Stack.Screen
+				name="index"
+				options={{
+					title: "Welcome",
+				}}
+			/>
 		</Stack>
 	);
 };
