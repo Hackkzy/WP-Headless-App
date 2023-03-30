@@ -15,13 +15,13 @@ import BlogContent from "./jobdetails/specifics/BlogContent";
 import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
 
 export {
-	ScreenHeaderBtn,
-	Welcome,
-	LatestPosts,
-	BlogHeader,
-	BlogTabs,
-	JobAbout,
-	JobFooter,
-	BlogContent,
-	NearbyJobCard,
+    ScreenHeaderBtn,
+    Welcome,
+    LatestPosts,
+    BlogHeader,
+    BlogTabs,
+    JobAbout,
+    JobFooter,
+    BlogContent,
+    NearbyJobCard,
 };

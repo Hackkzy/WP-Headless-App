@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
 
-import { COLORS, icons, images, SIZES } from "../../../constants";
+import { COLORS, SIZES } from "../../../constants";
 import { ScreenHeaderBtn, Welcome, LatestPosts } from "../../../components";
 
 const Home = () => {
@@ -15,16 +15,13 @@ const Home = () => {
 				options={{
 					headerStyle: { backgroundColor: COLORS.lightWhite },
 					headerShadowVisible: false,
-					headerLeft: () => (
-						<ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
-					),
 					headerRight: () => (
 						<ScreenHeaderBtn
 							iconUrl={{ uri: "https://i.pravatar.cc/300" }}
-							dimension="100%"
+							dimension='100%'
 						/>
 					),
-					headerTitle: "",
+					headerTitle: "BiliPlugins",
 				}}
 			/>
 

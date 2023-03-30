@@ -8,7 +8,6 @@ const Posts = () => {
 			<Stack.Screen
 				options={{
 					headerShadowVisible: false,
-
 					headerTitle: "Posts",
 				}}
 			/>
