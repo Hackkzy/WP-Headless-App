@@ -16,6 +16,10 @@
     },
     "android": {
       "package": "com.hackkzy.BiliPlugins"
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#262626"
     }
   }
 }
