@@ -25,7 +25,6 @@ const Posts = () => {
 
 	const getPosts = async () => {
 		setIsLoading(true);
-		setPosts([]);
 		try {
 			const options = {
 				method: "GET",
@@ -37,7 +36,7 @@ const Posts = () => {
 				},
 			};
 			const response = await axios.request(options);
-			setPosts(response.data);
+			setPosts((prevPosts) => [...prevPosts, ...response.data]);
 			setHeaders(response.headers);
 		} catch (error) {
 			setError(error);
@@ -48,13 +47,6 @@ const Posts = () => {
 	};
 
 	const totalPages = headers["x-wp-totalpages"];
-	const handlePagination = (direction) => {
-		if (direction === "left" && page > 1) {
-			setPage((prevPage) => prevPage - 1);
-		} else if (direction === "right" && totalPages > page) {
-			setPage((prevPage) => prevPage + 1);
-		}
-	};
 
 	useEffect(() => {
 		getPosts();
@@ -74,9 +66,7 @@ const Posts = () => {
 				renderItem={({ item }) => (
 					<LatestPostCard
 						item={item}
-						handleCardPress={() =>
-							router.push(`/blog-page/${item.id}`)
-						}
+						handleCardPress={() => router.push(`/blog-page/${item.id}`)}
 					/>
 				)}
 				keyExtractor={(item) => item.id}
@@ -84,51 +74,22 @@ const Posts = () => {
 					padding: SIZES.medium,
 					rowGap: SIZES.medium,
 				}}
-				ListHeaderComponent={() => (
+				ListFooterComponent={() => (
 					<>
 						<View style={styles.loaderContainer}>
 							{isLoading ? (
-								<ActivityIndicator
-									size='large'
-									color={COLORS.primary}
-								/>
+								<ActivityIndicator size="large" color={COLORS.primary} />
 							) : (
 								error && <Text>Oops something went wrong</Text>
 							)}
 						</View>
 					</>
 				)}
-				ListFooterComponent={() => (
-					<View style={styles.footerContainer}>
-						<TouchableOpacity
-							style={styles.paginationButton(
-								page == 1 ? false : true
-							)}
-							onPress={() => handlePagination("left")}
-						>
-							<Image
-								source={icons.chevronLeft}
-								style={styles.paginationImage}
-								resizeMode='contain'
-							/>
-						</TouchableOpacity>
-						<View style={styles.paginationTextBox}>
-							<Text style={styles.paginationText}>{page}</Text>
-						</View>
-						<TouchableOpacity
-							style={styles.paginationButton(
-								page < totalPages ? true : false
-							)}
-							onPress={() => handlePagination("right")}
-						>
-							<Image
-								source={icons.chevronRight}
-								style={styles.paginationImage}
-								resizeMode='contain'
-							/>
-						</TouchableOpacity>
-					</View>
-				)}
+				onEndReached={() => {
+					if (!isLoading && page < totalPages) {
+						setPage((prevPage) => prevPage + 1);
+					}
+				}}
 			/>
 		</SafeAreaView>
 	);
