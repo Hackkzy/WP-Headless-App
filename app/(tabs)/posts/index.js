@@ -66,7 +66,9 @@ const Posts = () => {
 				renderItem={({ item }) => (
 					<LatestPostCard
 						item={item}
-						handleCardPress={() => router.push(`/blog-page/${item.id}`)}
+						handleCardPress={() =>
+							router.push(`/blog-page/${item.id}`)
+						}
 					/>
 				)}
 				keyExtractor={(item) => item.id}
@@ -78,7 +80,10 @@ const Posts = () => {
 					<>
 						<View style={styles.loaderContainer}>
 							{isLoading ? (
-								<ActivityIndicator size="large" color={COLORS.primary} />
+								<ActivityIndicator
+									size='large'
+									color={COLORS.primary}
+								/>
 							) : (
 								error && <Text>Oops something went wrong</Text>
 							)}
