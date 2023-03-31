@@ -4,24 +4,18 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 import Welcome from "./home/Welcome";
 import LatestPosts from "./home/LatestPosts";
 
-// job details screen
-import BlogHeader from "./jobdetails/BlogHeader";
-import { default as BlogTabs } from "./jobdetails/tabs/BlogTabs";
-import { default as JobAbout } from "./jobdetails/about/About";
-import { default as JobFooter } from "./jobdetails/footer/Footer";
-import BlogContent from "./jobdetails/specifics/BlogContent";
-
-// common
-import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
+// Single Blog screen.
+import BlogHeader from "./singleBlog/BlogHeader";
+import BlogTabs from "./singleBlog/BlogTabs";
+import BlogFooter from "./singleBlog/Footer";
+import BlogContent from "./singleBlog/BlogContent";
 
 export {
-    ScreenHeaderBtn,
-    Welcome,
-    LatestPosts,
-    BlogHeader,
-    BlogTabs,
-    JobAbout,
-    JobFooter,
-    BlogContent,
-    NearbyJobCard,
+	ScreenHeaderBtn,
+	Welcome,
+	LatestPosts,
+	BlogHeader,
+	BlogTabs,
+	BlogFooter,
+	BlogContent,
 };
