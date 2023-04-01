@@ -20,11 +20,8 @@ const LatestPosts = () => {
 		per_page: 5,
 	});
 
-	const [selectedPost, setSelectedPost] = useState(0);
-
 	const handleCardPress = (item) => {
 		router.push(`/blog-page/${item.id}`);
-		setSelectedPost(item.id);
 	};
 
 	return (
@@ -45,11 +42,7 @@ const LatestPosts = () => {
 					<FlatList
 						data={data}
 						renderItem={({ item }) => (
-							<LatestPostCard
-								item={item}
-								selectedPost={selectedPost}
-								handleCardPress={handleCardPress}
-							/>
+							<LatestPostCard item={item} handleCardPress={handleCardPress} />
 						)}
 						keyExtractor={(item) => item.id}
 						contentContainerStyle={{ columnGap: SIZES.medium }}

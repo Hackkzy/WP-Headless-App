@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { COLORS, FONT, SHADOWS, SIZES } from "../../../constants";
 import { checkImageURL, decodeHTMLEntities } from "../../../utils";
 
-const LatestPostCard = ({ item, handleCardPress }) => {
+const PostCard = ({ item, handleCardPress }) => {
 	return (
 		<TouchableOpacity
 			style={styles.container}
@@ -33,19 +33,16 @@ const LatestPostCard = ({ item, handleCardPress }) => {
 	);
 };
 
-export default LatestPostCard;
+export default PostCard;
 
 const styles = StyleSheet.create({
 	container: {
-		width: 250,
 		padding: SIZES.medium,
 		backgroundColor: "#FFF",
 		borderRadius: SIZES.medium,
-		...SHADOWS.medium,
-		shadowColor: COLORS.white,
 	},
 	imageContainer: {
-		height: 130,
+		height: 200,
 		borderRadius: SIZES.medium,
 		justifyContent: "center",
 	},

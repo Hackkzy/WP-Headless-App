@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-	ActivityIndicator,
-	FlatList,
-	Image,
-	TouchableOpacity,
-	View,
-} from "react-native";
+import { ActivityIndicator, FlatList, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import { WP_SITE_URL } from "@env";
 
-import { COLORS, FONT, icons, SIZES } from "../../../constants";
-import LatestPostCard from "../../../components/common/cards/LatestPostCard";
+import { COLORS, FONT, SIZES } from "../../../constants";
+import PostCard from "../../../components/common/cards/PostCard";
 import axios from "axios";
 
 const Posts = () => {
@@ -64,11 +58,9 @@ const Posts = () => {
 			<FlatList
 				data={posts}
 				renderItem={({ item }) => (
-					<LatestPostCard
+					<PostCard
 						item={item}
-						handleCardPress={() =>
-							router.push(`/blog-page/${item.id}`)
-						}
+						handleCardPress={() => router.push(`/blog-page/${item.id}`)}
 					/>
 				)}
 				keyExtractor={(item) => item.id}
@@ -80,10 +72,7 @@ const Posts = () => {
 					<>
 						<View style={styles.loaderContainer}>
 							{isLoading ? (
-								<ActivityIndicator
-									size='large'
-									color={COLORS.primary}
-								/>
+								<ActivityIndicator size="large" color={COLORS.primary} />
 							) : (
 								error && <Text>Oops something went wrong</Text>
 							)}
@@ -106,51 +95,7 @@ const styles = StyleSheet.create({
 	container: {
 		width: "100%",
 	},
-	searchTitle: {
-		fontFamily: FONT.bold,
-		fontSize: SIZES.xLarge,
-		color: COLORS.primary,
-	},
-	noOfSearchedJobs: {
-		marginTop: 2,
-		fontFamily: FONT.medium,
-		fontSize: SIZES.small,
-		color: COLORS.primary,
-	},
 	loaderContainer: {
 		marginTop: SIZES.medium,
-	},
-	footerContainer: {
-		marginTop: SIZES.small,
-		justifyContent: "center",
-		alignItems: "center",
-		flexDirection: "row",
-		gap: 10,
-	},
-	paginationButton: (active) => ({
-		width: 30,
-		height: 30,
-		borderRadius: 5,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: active ? COLORS.tertiary : COLORS.gray2,
-	}),
-	paginationImage: {
-		width: "60%",
-		height: "60%",
-		tintColor: COLORS.white,
-	},
-	paginationTextBox: {
-		width: 30,
-		height: 30,
-		borderRadius: 2,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: COLORS.white,
-	},
-	paginationText: {
-		fontFamily: FONT.bold,
-		fontSize: SIZES.medium,
-		color: COLORS.primary,
 	},
 });
