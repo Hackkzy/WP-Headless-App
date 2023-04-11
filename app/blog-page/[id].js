@@ -24,7 +24,7 @@ const BlogPage = () => {
 	const params = useSearchParams();
 	const router = useRouter();
 
-	const { data, isLoading, error, refetch } = useFetch(`posts/${params.id}`);
+	const { data, isLoading, error, refetch } = useFetch(`${params.postType}/${params.id}`);
 
 	const [activeTab, setActiveTab] = useState(tabs[0]);
 	const [refreshing, setRefreshing] = useState(false);
@@ -38,7 +38,7 @@ const BlogPage = () => {
 	const displayTabContent = () => {
 		switch (activeTab) {
 			case "Blog Content":
-				return <BlogContent postContent={data.content.rendered ?? "N/A"} />;
+				return <BlogContent postContent={data.content.rendered ? data.content.rendered : "N/A"} />;
 			case "Comments":
 				return <Text>Comments(Coming Soon)</Text>;
 			default:

@@ -34,7 +34,7 @@ const BlogContent = ({ postContent }) => {
 						scalesPageToFit: true,
 					},
 				}}
-				//   ignoredStyles={["width", "height", "video"]}
+				// ignoredStyles={["width", "height", "video"]}
 				tagsStyles={{
 					img: { height: 250, width: 350, resizeMode: "center" },
 				}}
