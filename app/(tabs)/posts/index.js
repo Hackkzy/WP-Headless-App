@@ -4,7 +4,7 @@ import { Stack, useRouter } from "expo-router";
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import { WP_SITE_URL } from "@env";
 
-import { COLORS, FONT, SIZES } from "../../../constants";
+import { COLORS, SIZES } from "../../../constants";
 import PostCard from "../../../components/common/cards/PostCard";
 import axios from "axios";
 
@@ -60,7 +60,7 @@ const Posts = () => {
 				renderItem={({ item }) => (
 					<PostCard
 						item={item}
-						handleCardPress={() => router.push(`/blog-page/${item.id}`)}
+						handleCardPress={() => router.push({ pathname : '/blog-page', params: { postType: 'posts', id: item.id } })}
 					/>
 				)}
 				keyExtractor={(item) => item.id}
