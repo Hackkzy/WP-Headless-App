@@ -1,5 +1,4 @@
 import { Tabs } from "expo-router";
-import { Text } from "react-native";
 import { COLORS } from "../../constants";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -12,12 +11,6 @@ export default function AppLayout() {
 				tabBarActiveTintColor: COLORS.tertiary,
 				tabBarInactiveTintColor: COLORS.white,
 				tabBarStyle: {
-					marginLeft: 50,
-					marginRight: 50,
-					marginBottom: 30,
-					borderRadius: 35,
-					position: "absolute",
-					paddingHorizontal: 20,
 					backgroundColor: COLORS.primary,
 				},
 			}}
@@ -25,16 +18,24 @@ export default function AppLayout() {
 			<Tabs.Screen
 				name="home"
 				options={{
-					tabBarIcon: ({ color }) => (
-						<Ionicons name="home" size={24} color={color} />
+					tabBarIcon: ({ color, focused, size }) => (
+						<Ionicons name={ focused ? 'home' : 'home-outline' } size={size} color={color} />
 					),
 				}}
 			/>
 			<Tabs.Screen
 				name="posts"
 				options={{
-					tabBarIcon: ({ color }) => (
-						<Ionicons name="newspaper" size={24} color={color} />
+					tabBarIcon: ({ color, focused, size }) => (
+						<Ionicons name={ focused ? 'newspaper' : 'newspaper-outline' } size={size} color={color} />
+					),
+				}}
+			/>
+			<Tabs.Screen
+				name="pages"
+				options={{
+					tabBarIcon: ({ color, focused, size }) => (
+						<Ionicons name={ focused ? 'document' : 'document-outline' } size={size} color={color} />
 					),
 				}}
 			/>
