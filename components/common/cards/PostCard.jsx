@@ -38,7 +38,7 @@ export default PostCard;
 const styles = StyleSheet.create({
 	container: {
 		padding: SIZES.medium,
-		backgroundColor: "#FFF",
+		backgroundColor: COLORS.secondary,
 		borderRadius: SIZES.medium,
 	},
 	imageContainer: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 	postTitle: {
 		fontSize: SIZES.large,
 		fontFamily: FONT.medium,
-		color: COLORS.primary,
+		color: COLORS.white,
 	},
 	infoWrapper: {
 		flexDirection: "row",
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	publisher: {
-		fontSize: SIZES.medium - 2,
+		fontSize: SIZES.medium - 1,
 		fontFamily: FONT.regular,
-		color: COLORS.primary,
+		color: COLORS.gray,
 	},
 });

@@ -18,6 +18,7 @@ const Welcome = ({ searchTerm, setSearchTerm, handleClick }) => {
 						value={searchTerm}
 						onChangeText={(text) => setSearchTerm(text)}
 						placeholder="What are you looking for?"
+						placeholderTextColor={COLORS.gray}
 					/>
 				</View>
 
@@ -42,12 +43,12 @@ const styles = StyleSheet.create({
 	userName: {
 		fontFamily: FONT.regular,
 		fontSize: SIZES.large,
-		color: COLORS.secondary,
+		color: COLORS.white,
 	},
 	welcomeMessage: {
 		fontFamily: FONT.bold,
 		fontSize: SIZES.xLarge,
-		color: COLORS.primary,
+		color: COLORS.white,
 		marginTop: 2,
 	},
 	searchContainer: {
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
 	},
 	searchWrapper: {
 		flex: 1,
-		backgroundColor: COLORS.white,
+		backgroundColor: COLORS.secondary,
 		marginRight: SIZES.small,
 		justifyContent: "center",
 		alignItems: "center",
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 		paddingHorizontal: SIZES.medium,
+		color:COLORS.white,
 	},
 	searchBtn: {
 		width: 50,

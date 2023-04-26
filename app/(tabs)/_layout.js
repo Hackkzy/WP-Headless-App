@@ -8,34 +8,37 @@ export default function AppLayout() {
 			screenOptions={{
 				headerShown: false,
 				tabBarShowLabel: false,
-				tabBarActiveTintColor: COLORS.tertiary,
-				tabBarInactiveTintColor: COLORS.white,
+				tabBarActiveTintColor: COLORS.white,
+				tabBarInactiveTintColor: COLORS.gray,
+				headerShadowVisible: false,
 				tabBarStyle: {
 					backgroundColor: COLORS.primary,
+					borderColor: COLORS.primary,
+					flexDirection: "row",
 				},
 			}}
 		>
 			<Tabs.Screen
-				name="home"
+				name={"home"}
 				options={{
 					tabBarIcon: ({ color, focused, size }) => (
-						<Ionicons name={ focused ? 'home' : 'home-outline' } size={size} color={color} />
+						<Ionicons
+							name={focused ? "home" : "home-outline"}
+							size={size}
+							color={color}
+						/>
 					),
 				}}
 			/>
 			<Tabs.Screen
-				name="posts"
+				name={"posts"}
 				options={{
 					tabBarIcon: ({ color, focused, size }) => (
-						<Ionicons name={ focused ? 'newspaper' : 'newspaper-outline' } size={size} color={color} />
-					),
-				}}
-			/>
-			<Tabs.Screen
-				name="pages"
-				options={{
-					tabBarIcon: ({ color, focused, size }) => (
-						<Ionicons name={ focused ? 'document' : 'document-outline' } size={size} color={color} />
+						<Ionicons
+							name={focused ? "newspaper" : "newspaper-outline"}
+							size={size}
+							color={color}
+						/>
 					),
 				}}
 			/>

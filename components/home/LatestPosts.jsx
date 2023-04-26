@@ -21,7 +21,7 @@ const LatestPosts = () => {
 	});
 
 	const handleCardPress = (item) => {
-		router.push(`/blog-page/${item.id}`);
+		router.push({ pathname : '/blog-page', params: { postType: 'posts', id: item.id } });
 	};
 
 	return (
@@ -35,7 +35,7 @@ const LatestPosts = () => {
 
 			<View style={styles.cardsContainer}>
 				{isLoading ? (
-					<ActivityIndicator size="large" color={COLORS.primary} />
+					<ActivityIndicator size="large" color={COLORS.tertiary} />
 				) : error ? (
 					<Text>Something went wrong</Text>
 				) : (
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 	headerTitle: {
 		fontSize: SIZES.large,
 		fontFamily: FONT.medium,
-		color: COLORS.primary,
+		color: COLORS.white,
 	},
 	headerBtn: {
 		fontSize: SIZES.medium,

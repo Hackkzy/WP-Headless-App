@@ -10,18 +10,19 @@ const Home = () => {
 	const [searchTerm, setSearchTerm] = useState("");
 
 	return (
-		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
 			<Stack.Screen
 				options={{
-					headerStyle: { backgroundColor: COLORS.lightWhite },
+					headerStyle: { backgroundColor: COLORS.primary },
 					headerShadowVisible: false,
 					headerRight: () => (
 						<ScreenHeaderBtn
 							iconUrl={{ uri: "https://i.pravatar.cc/300" }}
-							dimension='100%'
+							dimension="100%"
 						/>
 					),
-					headerTitle: "BiliPlugins",
+					headerTitle: "BiliPlugins/",
+					headerTitleStyle: { color: COLORS.white },
 				}}
 			/>
 

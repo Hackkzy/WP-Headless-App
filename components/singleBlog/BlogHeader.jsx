@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   postTitle: {
     fontSize: SIZES.large,
-    color: COLORS.primary,
+    color: COLORS.white,
     fontFamily: FONT.bold,
     textAlign: "center",
   },
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   authorName: {
     fontSize: SIZES.medium - 2,
-    color: COLORS.primary,
+    color: COLORS.gray,
     fontFamily: FONT.medium,
   },
   postDateBox: {

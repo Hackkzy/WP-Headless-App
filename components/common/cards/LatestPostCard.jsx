@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
 	container: {
 		width: 250,
 		padding: SIZES.medium,
-		backgroundColor: "#FFF",
+		backgroundColor: COLORS.secondary,
 		borderRadius: SIZES.medium,
-		...SHADOWS.medium,
-		shadowColor: COLORS.white,
+		// ...SHADOWS.medium,
+		// shadowColor: COLORS.gray,
 	},
 	imageContainer: {
 		height: 130,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 	postTitle: {
 		fontSize: SIZES.large,
 		fontFamily: FONT.medium,
-		color: COLORS.primary,
+		color: COLORS.white,
 	},
 	infoWrapper: {
 		flexDirection: "row",
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
 	publisher: {
 		fontSize: SIZES.medium - 2,
 		fontFamily: FONT.regular,
-		color: COLORS.primary,
+		color: COLORS.gray,
 	},
 });

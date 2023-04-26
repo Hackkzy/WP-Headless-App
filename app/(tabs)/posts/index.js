@@ -47,12 +47,13 @@ const Posts = () => {
 	}, [page]);
 
 	return (
-		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+		<SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
 			<Stack.Screen
 				options={{
-					headerStyle: { backgroundColor: COLORS.lightWhite },
+					headerStyle: { backgroundColor: COLORS.primary },
 					headerShadowVisible: false,
 					headerTitle: "Posts",
+					headerTitleStyle: { color: COLORS.white },
 				}}
 			/>
 			<FlatList
@@ -60,7 +61,12 @@ const Posts = () => {
 				renderItem={({ item }) => (
 					<PostCard
 						item={item}
-						handleCardPress={() => router.push({ pathname : '/blog-page', params: { postType: 'posts', id: item.id } })}
+						handleCardPress={() =>
+							router.push({
+								pathname: "/blog-page",
+								params: { postType: "posts", id: item.id },
+							})
+						}
 					/>
 				)}
 				keyExtractor={(item) => item.id}
