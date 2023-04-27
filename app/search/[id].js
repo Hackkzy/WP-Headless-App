@@ -59,45 +59,42 @@ const Posts = () => {
 					headerTitleStyle: { color: COLORS.white },
 				}}
 			/>
-			{posts.length !== 0 ? (
-				<FlatList
-					data={posts}
-					renderItem={({ item }) => (
-						<PostCard
-							item={item}
-							handleCardPress={() =>
-								router.push({
-									pathname: "/blog-page",
-									params: { postType: "posts", id: item.id },
-								})
-							}
-						/>
-					)}
-					keyExtractor={(item) => item.id}
-					contentContainerStyle={{
-						padding: SIZES.medium,
-						rowGap: SIZES.medium,
-					}}
-					ListFooterComponent={() => (
-						<>
-							<View style={styles.loaderContainer}>
-								{isLoading ? (
-									<ActivityIndicator size="large" color={COLORS.tertiary} />
-								) : (
-									error && <Text>Oops something went wrong</Text>
-								)}
-							</View>
-						</>
-					)}
-					onEndReached={() => {
-						if (!isLoading && page < totalPages) {
-							setPage((prevPage) => prevPage + 1);
+			<FlatList
+				data={posts}
+				renderItem={({ item }) => (
+					<PostCard
+						item={item}
+						handleCardPress={() =>
+							router.push({
+								pathname: "/blog-page",
+								params: { postType: "posts", id: item.id },
+							})
 						}
-					}}
-				/>
-			) : (
-				<NotFound />
-			)}
+					/>
+				)}
+				keyExtractor={(item) => item.id}
+				contentContainerStyle={{
+					padding: SIZES.medium,
+					rowGap: SIZES.medium,
+				}}
+				ListFooterComponent={() => (
+					<>
+						<View style={styles.loaderContainer}>
+							{isLoading ? (
+								<ActivityIndicator size="large" color={COLORS.tertiary} />
+							) : (
+								error && <Text>Oops something went wrong</Text>
+							)}
+						</View>
+					</>
+				)}
+				onEndReached={() => {
+					if (!isLoading && page < totalPages) {
+						setPage((prevPage) => prevPage + 1);
+					}
+				}}
+				ListEmptyComponent={isLoading ? false : <NotFound />}
+			/>
 		</SafeAreaView>
 	);
 };

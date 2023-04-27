@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 		width: "100%",
 		height: "100%",
 		paddingHorizontal: SIZES.medium,
-		color:COLORS.white,
+		color: COLORS.white,
 	},
 	searchBtn: {
 		width: 50,
