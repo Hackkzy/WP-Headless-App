@@ -21,7 +21,7 @@ const LatestPosts = () => {
 	});
 
 	const handleCardPress = (item) => {
-		router.push({ pathname : '/blog-page', params: { postType: 'posts', id: item.id } });
+		router.push({ pathname : `/blog-page/${item.id}`, params: { postType: 'posts', id: item.id } });
 	};
 
 	return (
