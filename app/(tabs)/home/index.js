@@ -38,11 +38,13 @@ const Home = () => {
 						setSearchTerm={setSearchTerm}
 						handleClick={() => {
 							if (searchTerm) {
-								router.push(`/search/${searchTerm}`);
+								router.push({
+									pathname: `/search/${searchTerm}`,
+									params: { searchTerm: searchTerm },
+								});
 							}
 						}}
 					/>
-
 					<LatestPosts />
 				</View>
 			</ScrollView>
